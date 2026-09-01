@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NO.Sメ — Control Panel</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="bg-grid"></div>
+
+    <div class="glow glow-purple"></div>
+
+    <div class="glow glow-cyan"></div>
+
+    <div class="scan-line"></div>
+
+
+    <!-- ===============================
+         HEADER
+    ================================ -->
+
+    <header class="top-bar">
+
+        <div class="brand-mini">
+            NO.Sメ
+        </div>
+
+        <div class="server-status">
+
+            <span class="status-dot"></span>
+
+            SYSTEM ONLINE
+
+        </div>
+
+    </header>
+
+
+    <!-- ===============================
+         DASHBOARD
+    ================================ -->
+
+    <main class="dashboard">
+
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <div class="system-label">
+                    ◈ CONTROL CENTER
+                </div>
+
+                <h1>
+                    Welcome,
+                    <span id="playerName">
+                        SAHIL
+                    </span>
+                </h1>
+
+                <p>
+                    Select a utility below to continue.
+                </p>
+
+            </div>
+
+
+            <div class="online-card">
+
+                <span class="status-dot"></span>
+
+                ONLINE
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+             TOOL GRID
+        ================================ -->
+
+        <section class="tool-grid">
+
+
+            <!-- SENSITIVITY -->
+
+            <button
+                class="tool-card"
+                onclick="showSensitivity()"
+            >
+
+                <div class="tool-icon">
+                    🎯
+                </div>
+
+                <div class="tool-info">
+
+                    <h2>
+                        Sensitivity
+                    </h2>
+
+                    <p>
+                        Adjust control values
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- HEADSHOT -->
+
+            <button
+                class="tool-card"
+                onclick="showHeadshot()"
+            >
+
+                <div class="tool-icon">
+                    🔥
+                </div>
+
+                <div class="tool-info">
+
+                    <h2>
+                        Headshot Preset
+                    </h2>
+
+                    <p>
+                        Recommended starting values
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- NO RECOIL -->
+
+            <button
+                class="tool-card"
+                onclick="showNoRecoil()"
+            >
+
+                <div class="tool-icon">
+                    🎮
+                </div>
+
+                <div class="tool-info">
+
+                    <h2>
+                        Aim Guide
+                    </h2>
+
+                    <p>
+                        Controlled aim practice
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- PERFORMANCE -->
+
+            <button
+                class="tool-card"
+                onclick="showAntiLag()"
+            >
+
+                <div class="tool-icon">
+                    ⚡
+                </div>
+
+                <div class="tool-info">
+
+                    <h2>
+                        Performance
+                    </h2>
+
+                    <p>
+                        Device optimization tips
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- DPI -->
+
+            <button
+                class="tool-card"
+                onclick="showDPI()"
+            >
+
+                <div class="tool-icon">
+                    📱
+                </div>
+
+                <div class="tool-info">
+
+                    <h2>
+                        DPI Calculator
+                    </h2>
+
+                    <p>
+                        Calculate your setup
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- GAME -->
+
+            <button
+                class="tool-card featured"
+                onclick="openFreeFire()"
+            >
+
+                <div class="tool-icon">
+                    🚀
+                </div>
+
+                <div class="tool-info">
+
+                    <h2>
+                        Launch Game
+                    </h2>
+
+                    <p>
+                        Open Free Fire MAX
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ===============================
+             FOOTER
+        ================================ -->
+
+        <section class="dashboard-footer">
+
+            <div>
+                NO.Sメ GAMING SYSTEM
+            </div>
+
+            <div>
+                CREATED BY
+                <strong>
+                    @be.like_sahil
+                </strong>
+            </div>
+
+            <div>
+                V1.0
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ===============================
+         SENSITIVITY MODAL
+    ================================ -->
+
+    <section
+        class="settings-panel"
+        id="settingsPanel"
+    >
+
+        <div class="settings-header">
+
+            <div>
+
+                <span class="small-label">
+                    CONTROL CENTER
+                </span>
+
+                <h2>
+                    🎯 Sensitivity Adjust
+                </h2>
+
+            </div>
+
+            <button
+                class="close-panel"
+                onclick="closeSettings()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="settings-note">
+
+            <span>⚡</span>
+
+            Adjust values according to
+            your device and preference.
+
+        </div>
+
+
+        <!-- GENERAL -->
+
+        <div class="slider-row">
+
+            <div>
+
+                <label>
+                    GENERAL
+                </label>
+
+                <span id="generalValue">
+                    95
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="95"
+                id="generalSlider"
+                oninput="updateSlider('general')"
+            >
+
+        </div>
+
+
+        <!-- RED DOT -->
+
+        <div class="slider-row">
+
+            <div>
+
+                <label>
+                    RED DOT
+                </label>
+
+                <span id="redDotValue">
+                    90
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="90"
+                id="redDotSlider"
+                oninput="updateSlider('redDot')"
+            >
+
+        </div>
+
+
+        <!-- 2X -->
+
+        <div class="slider-row">
+
+            <div>
+
+                <label>
+                    2× SCOPE
+                </label>
+
+                <span id="scope2Value">
+                    85
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="85"
+                id="scope2Slider"
+                oninput="updateSlider('scope2')"
+            >
+
+        </div>
+
+
+        <!-- 4X -->
+
+        <div class="slider-row">
+
+            <div>
+
+                <label>
+                    4× SCOPE
+                </label>
+
+                <span id="scope4Value">
+                    80
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="80"
+                id="scope4Slider"
+                oninput="updateSlider('scope4')"
+            >
+
+        </div>
+
+
+        <!-- SNIPER -->
+
+        <div class="slider-row">
+
+            <div>
+
+                <label>
+                    SNIPER
+                </label>
+
+                <span id="sniperValue">
+                    70
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="70"
+                id="sniperSlider"
+                oninput="updateSlider('sniper')"
+            >
+
+        </div>
+
+
+        <div class="settings-actions">
+
+            <button
+                class="reset-button"
+                onclick="resetSettings()"
+            >
+                ↻ RESET
+            </button>
+
+            <button
+                class="save-button"
+                onclick="saveSettings()"
+            >
+                ✓ SAVE SETTINGS
+            </button>
+
+        </div>
+
+
+        <div
+            class="save-status"
+            id="saveStatus"
+        >
+            SETTINGS READY
+        </div>
+
+    </section>
+
+
+    <footer class="bottom-hud">
+
+        <span>
+            NO.Sメ SYSTEM
+        </span>
+
+        <span>
+            ● READY
+        </span>
+
+        <span>
+            @be.like_sahil
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+                              </html>
