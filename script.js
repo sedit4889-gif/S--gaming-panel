@@ -551,43 +551,249 @@ function loadUsername() {
 
         player.textContent =
             username;
+// ==========================================
+// PREMIUM TOOL MODAL
+// ==========================================
+
+function openToolModal(
+    icon,
+    label,
+    title,
+    description,
+    content
+) {
+
+    const modal =
+        document.getElementById("toolModal");
+
+    if (!modal) return;
+
+    document.getElementById("modalIcon")
+        .textContent = icon;
+
+    document.getElementById("modalLabel")
+        .textContent = label;
+
+    document.getElementById("modalTitle")
+        .textContent = title;
+
+    document.getElementById("modalDescription")
+        .textContent = description;
+
+    document.getElementById("modalContent")
+        .innerHTML = content;
+
+    modal.classList.add("active");
+}
+
+
+function closeToolModal() {
+
+    const modal =
+        document.getElementById("toolModal");
+
+    if (modal) {
+
+        modal.classList.remove("active");
 
     }
 
 }
 
 
-// ================================
-// PAGE START
-// ================================
+// ==========================================
+// HEADSHOT
+// ==========================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+function showHeadshot() {
 
-        loadSettings();
+    openToolModal(
 
-        loadUsername();
+        "🔥",
 
+        "NO.Sメ PRESET",
+
+        "Headshot Preset",
+
+        "Recommended starting-point sensitivity values.",
+
+        `
+        <strong>GENERAL</strong>
+        <span class="value">95</span><br>
+
+        <strong>RED DOT</strong>
+        <span class="value">90</span><br>
+
+        <strong>2× SCOPE</strong>
+        <span class="value">85</span><br>
+
+        <strong>4× SCOPE</strong>
+        <span class="value">80</span><br>
+
+        <strong>SNIPER</strong>
+        <span class="value">70</span>
+        `
+
+    );
+
+}
+
+
+// ==========================================
+// AIM GUIDE
+// ==========================================
+
+function showNoRecoil() {
+
+    openToolModal(
+
+        "🎮",
+
+        "AIM CONTROL",
+
+        "Aim Guide",
+
+        "Practice-focused tips for more consistent control.",
+
+        `
+        ✓ Use comfortable sensitivity<br>
+        ✓ Practice controlled drag movement<br>
+        ✓ Test changes in training mode<br>
+        ✓ Adjust values gradually<br><br>
+
+        <strong>NO GAME FILES ARE MODIFIED.</strong>
+        `
+
+    );
+
+}
+
+
+// ==========================================
+// PERFORMANCE
+// ==========================================
+
+function showAntiLag() {
+
+    openToolModal(
+
+        "⚡",
+
+        "PERFORMANCE",
+
+        "Device Optimization",
+
+        "Simple steps that can help maintain stable performance.",
+
+        `
+        ✓ Close unnecessary background apps<br>
+        ✓ Keep sufficient free storage<br>
+        ✓ Use a stable network connection<br>
+        ✓ Avoid excessive device heat<br>
+        ✓ Keep the game updated
+        `
+
+    );
+
+}
+
+
+// ==========================================
+// DPI
+// ==========================================
+
+function showDPI() {
+
+    const dpi =
+        prompt(
+            "Enter your current DPI:"
+        );
+
+    if (!dpi) return;
+
+    const number =
+        Number(dpi);
+
+    if (
+        Number.isNaN(number) ||
+        number <= 0
+    ) {
+
+        openToolModal(
+            "⚠️",
+            "DPI TOOL",
+            "Invalid Input",
+            "Please enter a valid DPI number.",
+            `
+            Example:
+            <strong>420</strong>
+            `
+        );
+
+        return;
     }
-);
 
 
-// ================================
-// ENTER TO LOGIN
-// ================================
+    openToolModal(
+
+        "📱",
+
+        "DPI TOOL",
+
+        "DPI Information",
+
+        "Your entered device DPI.",
+
+        `
+        <strong>YOUR DPI</strong>
+        <span class="value">${number}</span><br><br>
+
+        Use a comfortable value suitable
+        for your device and screen.
+        `
+
+    );
+
+}
+
+
+// ==========================================
+// CLOSE MODAL WITH ESC
+// ==========================================
 
 document.addEventListener(
     "keydown",
     function(event) {
 
+        if (event.key === "Escape") {
+
+            closeToolModal();
+
+            closeSettings();
+
+        }
+
+    }
+);
+
+
+// ==========================================
+// CLOSE WHEN CLICKING BACKDROP
+// ==========================================
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById("toolModal");
+
         if (
-            event.key === "Enter" &&
-            document.getElementById("username") &&
-            document.getElementById("password")
+            modal &&
+            event.target === modal
         ) {
 
-            login();
+            closeToolModal();
 
         }
 
