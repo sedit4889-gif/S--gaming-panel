@@ -1,1 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NO.Sメ — Gaming Panel</title>
+
+    <meta
+        name="description"
+        content="NO.Sメ Free Fire Gaming Utility Panel"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         BACKGROUND
+    ================================== -->
+
+    <div class="bg-grid"></div>
+
+    <div class="glow glow-purple"></div>
+
+    <div class="glow glow-cyan"></div>
+
+    <div class="scan-line"></div>
+
+
+
+    <!-- =================================
+         TOP BAR
+    ================================== -->
+
+    <header class="top-bar">
+
+        <div class="brand-mini">
+            NO.Sメ
+        </div>
+
+        <div class="server-status">
+
+            <span class="status-dot"></span>
+
+            SERVER ONLINE
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         LOGIN WRAPPER
+    ================================== -->
+
+    <main class="login-wrapper">
+
+
+        <!-- LEFT / BRAND AREA -->
+
+        <section class="brand-section">
+
+
+            <div class="system-label">
+
+                <span>◈</span>
+
+                GAMING CONTROL SYSTEM
+
+            </div>
+
+
+            <h1>
+                NO.S<span>メ</span>
+            </h1>
+
+
+            <div class="brand-title">
+                FREE FIRE
+                <br>
+                GAMING PANEL
+            </div>
+
+
+            <p class="brand-description">
+
+                Welcome to your personal
+                gaming utility dashboard.
+
+            </p>
+
+
+            <!-- FEATURE TAGS -->
+
+            <div class="feature-tags">
+
+                <span>🎯 AIM</span>
+
+                <span>🔥 PRESETS</span>
+
+                <span>⚡ PERFORMANCE</span>
+
+            </div>
+
+
+            <!-- DECORATIVE LINE -->
+
+            <div class="tech-line">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             LOGIN CARD
+        ================================== -->
+
+        <section class="login-card">
+
+
+            <!-- CARD TOP -->
+
+            <div class="card-top">
+
+                <div class="lock-icon">
+                    🔐
+                </div>
+
+
+                <div>
+
+                    <div class="card-title">
+                        AUTHENTICATION
+                    </div>
+
+                    <div class="card-subtitle">
+                        Authorized access only
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="connection-box">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    CONNECTION SECURE
+                </span>
+
+                <span class="connection-line"></span>
+
+            </div>
+
+
+
+            <!-- USERNAME -->
+
+            <div class="input-group">
+
+                <label>
+                    USERNAME
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ◉
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter username"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label>
+                    PASSWORD
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ◆
+                    </span>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        autocomplete="current-password"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword()"
+                        aria-label="Show password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                class="login-button"
+                onclick="login()"
+            >
+
+                <span class="button-icon">
+                    ▶
+                </span>
+
+                <span>
+                    ENTER PANEL
+                </span>
+
+                <span class="button-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- LOGIN MESSAGE -->
+
+            <div
+                class="login-message"
+                id="loginMessage"
+            ></div>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="security-row">
+
+                <span>
+                    🛡 Secure Session
+                </span>
+
+                <span>
+                    •
+                </span>
+
+                <span>
+                    Private Panel
+                </span>
+
+            </div>
+
+
+
+            <!-- CREATOR -->
+
+            <div class="creator-box">
+
+                <span>
+                    CREATED BY
+                </span>
+
+                <strong>
+                    @be.like_sahil
+                </strong>
+
+            </div>
+
+
+            <div class="panel-version">
+                NO.Sメ // GAMING PANEL // V1.0
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================
+         BOTTOM HUD
+    ================================== -->
+
+    <footer class="bottom-hud">
+
+        <span>
+            NO.Sメ SYSTEM
+        </span>
+
+        <span>
+            ● READY
+        </span>
+
+        <span>
+            V1.0
+        </span>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
